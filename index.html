@@ -871,7 +871,9 @@ this.wrongSound.frequency.rampTo("F1", 0.5, now);
                 this.lives--;
                 this.questionCount++; /* MODIFICATION: Added question count */
                 this.showFeedback('Missed! -1 Life', 'wrong');
-                this.wrongSound.triggerAttackRelease('0.1', Tone.now()); // Play crash sound for miss
+               const now = Tone.now();
+this.wrongSound.triggerAttackRelease("F3", "2n", now);
+this.wrongSound.frequency.rampTo("F1", 0.5, now);
                 this.updateUI();
                 
                 document.querySelectorAll('.answer-option').forEach(opt => {
